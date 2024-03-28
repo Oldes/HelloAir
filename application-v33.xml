@@ -27,7 +27,7 @@
 		<assetPacks>
 			<assetPack id="asset_pack1" delivery="install-time" folder="assetpack1"/>
 			<assetPack id="asset_pack2" delivery="fast-follow" folder="assetpack2"/>
-			<assetPack id="asset_pack3" delivery="fast-follow" folder="assetpack3"/>
+			<assetPack id="asset_pack3" delivery="on-demand" folder="assetpack3"/>
 		</assetPacks>
 		<manifestAdditions><![CDATA[
 		  <manifest android:installLocation="auto">
