@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<flex-config>
+ <metadata>
+  <title>Hello Air Test Application</title>
+  <publisher>Oldes</publisher>
+  <creator>Oldes' Rebol</creator>
+  <language>EN</language>
+ </metadata>
+ <compiler>
+  <define append="true"><name>CONFIG::debug</name><value>false</value></define>
+  <define append="true"><name>CONFIG::release</name><value>true</value></define>
+  <define append="true"><name>CONFIG::air</name><value>true</value></define>
+  <define append="true"><name>CONFIG::mobile</name><value>true</value></define>
+  <define append="true"><name>CONFIG::desktop</name><value>false</value></define>
+  <define append="true"><name>CONFIG::test_permissions</name><value>false</value></define>
+  <define append="true"><name>CONFIG::test_hello</name><value>true</value></define>
+  <define append="true"><name>CONFIG::test_assets</name><value>true</value></define>
+  <define append="true"><name>CONFIG::test_system</name><value>true</value></define>
+  <define append="true"><name>CONFIG::test_google</name><value>true</value></define>
+  <optimize>true</optimize>
+  <omit-trace-statements>false</omit-trace-statements>
+  <verbose-stacktraces>true</verbose-stacktraces>
+  <source-path append="true">
+   <path-element>Source</path-element>
+  </source-path>
+  <external-library-path append="true">
+   <path-element>Extensions\tech.oldes.hello.ane</path-element>
+   <path-element>Extensions\tech.oldes.permissions.ane</path-element>
+   <path-element>Extensions\tech.oldes.system.ane</path-element>
+   <path-element>Extensions\tech.oldes.GooglePlay.ane</path-element>
+   <path-element>Extensions\tech.oldes.GooglePlayAssets.ane</path-element>
+  </external-library-path>
+ </compiler>
+ <file-specs append="true">
+  <path-element>Source\Main.as</path-element>
+ </file-specs>
+ <default-background-color>#FFFFFF</default-background-color>
+ <default-frame-rate>30</default-frame-rate>
+ <default-size><width>480</width><height>762</height></default-size>
+</flex-config>
