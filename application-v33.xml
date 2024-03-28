@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<application xmlns="http://ns.adobe.com/air/application/50.2">
+	
+	<id>com.amanitadesign.TestAmanitaAndroidANE</id>
+	<versionNumber>0.33.39</versionNumber>
+	<supportedProfiles>mobileDevice</supportedProfiles>
+	<filename>TestAmanitaAndroidANE</filename>
+
+	<name>TestAmanitaAndroidANE</name>
+	<description></description>
+	<copyright></copyright>
+	<resdir>Resources</resdir>
+
+	<initialWindow>
+		<title>TestAndroidGooglePlayANE</title>
+		<content>Data/main.swf</content>
+		<visible>true</visible>
+		<fullScreen>true</fullScreen>
+		<!--<autoOrients>false</autoOrients>-->
+		<!--<aspectRatio>landscape</aspectRatio>-->
+		<renderMode>direct</renderMode>
+		<!--<depthAndStencil>true</depthAndStencil>--> <!-- required for 3D -->
+	</initialWindow>
+
+	<android>
+		<buildArchitectures>armv7,armv8,x86,x64</buildArchitectures>
+		<assetPacks>
+			<assetPack id="asset_pack1" delivery="install-time" folder="assetpack1"/>
+			<assetPack id="asset_pack2" delivery="fast-follow" folder="assetpack2"/>
+			<assetPack id="asset_pack3" delivery="fast-follow" folder="assetpack3"/>
+		</assetPacks>
+		<manifestAdditions><![CDATA[
+		  <manifest android:installLocation="auto">
+			<uses-sdk android:minSdkVersion="23" android:targetSdkVersion="33"/>
+
+			<!-- Required to read and write the expansion files on shared storage -->
+			<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+			<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+			<uses-permission android:name="android.permission.FOREGROUND_SERVICE"/> <!-- Required on Android P+ (API 28) to start foreground services. -->
+
+			<!--<uses-permission android:name="android.permission.RECEIVE_SMS" />-->
+			<uses-permission android:name="android.permission.INTERNET" />
+
+			<application android:enabled="true" android:isGame="true" android:hardwareAccelerated="true" android:debuggable="false">
+				<!-- GooglePlay Games Services -->
+				<meta-data android:name="com.google.android.gms.version" android:value="12451000"/>
+				<activity
+				  android:name="com.google.android.gms.games.internal.v2.resolution.GamesResolutionActivity"
+				  android:exported="false" />
+				<!-- APP ID - you must change it to ID of your application! -->
+				<meta-data
+					android:name="com.google.android.gms.games.APP_ID"
+					android:value="@string/game_services_project_id" />
+				<activity
+					android:name="com.google.android.play.core.common.PlayCoreDialogWrapperActivity"
+					android:enabled="false"
+					android:exported="false"
+					android:stateNotNeeded="true" />
+				<service
+					android:name="com.google.android.play.core.assetpacks.AssetPackExtractionService"
+					android:enabled="false"
+					android:exported="true" />
+				<service
+					android:name="com.google.android.play.core.assetpacks.ExtractionForegroundService"
+					android:enabled="false"
+					android:exported="false" />
+
+				<activity
+					android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+					android:windowSoftInputMode="stateAlwaysHidden|adjustPan"
+					android:theme="@android:style/Theme.Translucent.NoTitleBar"
+					android:excludeFromRecents="true"
+					android:exported="false" />
+
+				<activity
+					android:name="tech.oldes.permissions.PermissionsRequestActivity"
+					android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />
+			</application>
+		  </manifest> 
+		]]></manifestAdditions>
+
+		<colorDepth>32bit</colorDepth>
+	</android>
+
+	<iPhone> 
+		<InfoAdditions><![CDATA[ 
+		
+			<key>UIStatusBarStyle</key> 
+			<string>UIStatusBarStyleBlackOpaque</string> 
+			<key>UIRequiresPersistentWiFi</key> 
+			<string>NO</string>
+			<key>UIPrerenderedIcon</key>  
+			<true/>
+			<key>UIApplicationExitsOnSuspend</key>
+			<true/>
+			
+			<key>UIDeviceFamily</key>
+			<array>
+				<!-- iPhone support -->
+				<string>1</string> 
+				<!-- iPad support -->
+				<!--<string>2</string>-->
+			</array>
+				
+		]]></InfoAdditions> 
+		<requestedDisplayResolution>high</requestedDisplayResolution>
+	</iPhone> 
+	<icon>
+		<image192x192>Data/icons/icon_192.png</image192x192>
+	</icon>
+
+  <extensions>
+   <!--<extensionID>com.amanitadesign.GoogleExtension</extensionID>-->
+   <!--<extensionID>com.amanitadesign.AndroidCommon</extensionID>-->
+   <!--<extensionID>com.harman.PlayAssetDelivery</extensionID>-->
+   <!--<extensionID>com.google.android.play</extensionID>-->
+   <extensionID>tech.oldes.hello</extensionID>
+   <extensionID>tech.oldes.permissions</extensionID>
+   <!--<extensionID>tech.oldes.google</extensionID>-->
+   <extensionID>tech.oldes.system</extensionID>
+   <extensionID>tech.oldes.GooglePlayAssets</extensionID>
+   <extensionID>tech.oldes.GooglePlay</extensionID>
+   <!--<extensionID>tech.oldes.playassets</extensionID>-->
+   <!--<extensionID>com.distriqt.playservices.Auth</extensionID>
+   <extensionID>com.distriqt.playservices.Games</extensionID>
+   <extensionID>com.distriqt.playservices.Base</extensionID>-->
+  </extensions>
+</application>
