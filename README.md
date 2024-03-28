@@ -1,8 +1,13 @@
 # HelloAir
-Simple AIR app for testing native extensions
+Simple AIR app for testing some of my native extensions:
+1. [Hello](https://github.com/Oldes/ANE_Hello) - just a minimal extension template
+2. [GooglePlay](https://github.com/Oldes/ANE_GooglePlay)
+3. [GooglePlayAssets](https://github.com/Oldes/ANE_GooglePlayAssets)
+4. [System](https://github.com/Oldes/ANE_System) - for Android so far
 
+## How to build the application
 This project uses [Rebol](https://github.com/Oldes/Rebol3/) to [make the build](https://github.com/Oldes/HelloAir/blob/main/build.r3), but even without Rebol it may be built in 2 steps using these commands (on Windows):
-### Building a SWF file
+#### Building a SWF file
 ```
 java -Dsun.io.useCanonCaches=false -Xms32m -Xmx512m ^
   -Dflexlib=C:\Dev\SDKs\AIRSDK\frameworks ^
@@ -12,7 +17,7 @@ java -Dsun.io.useCanonCaches=false -Xms32m -Xmx512m ^
   -advanced-telemetry=false ^
   -o Data\main.swf
 ```
-### Building an AAB file
+#### Building an AAB file
 ```
 java -jar C:\Dev\SDKs\AIRSDK\lib\adt.jar ^
   -package -target aab ^
