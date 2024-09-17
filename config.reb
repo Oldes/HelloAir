@@ -6,7 +6,7 @@ ANDROID_SDK: %/C/Users/oldes/AppData/Local/Android/Sdk
 BUNDLETOOL:  %/C/Dev/bundletool-all-1.15.6.jar ;;-> https://github.com/google/bundletool/releases
 
 ;--- ADT configuration                                   
-manifest: %application-v33.xml
+manifest: %application-v34.xml
 root: %Data/
 content: [
 	%main.swf
