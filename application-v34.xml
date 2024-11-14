@@ -24,6 +24,8 @@
 
 	<android>
 		<buildArchitectures>armv7,armv8,x86,x64</buildArchitectures>
+		<gradleVersion>8.4</gradleVersion>
+		<androidGradlePluginVersion>7.4.0</androidGradlePluginVersion>
 		<assetPacks>
 			<assetPack id="asset_pack1" delivery="install-time" folder="assetpack1"/>
 			<assetPack id="asset_pack2" delivery="fast-follow" folder="assetpack2"/>
